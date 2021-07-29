@@ -3,9 +3,9 @@ import java.lang.Math;
 
 public class EmployeeWageBuild {
 	
-	public static final  int salaryPerHour=20,partTime=1,fullTime=2,workingDays=10,maxWorkingHours=60;
+ public static final  int partTime=1,fullTime=2;
 	
-	       public static int computeEmployeeWage() {
+public static int computeEmployeeWage(String company ,int salaryPerHour, int workingDays, int maxWorkingHours) {
 	    	   
 	    	   int empHours=0,totalEmpHours=0,totalWorkingDays=0,totalEmpWage=0;
 	    	   
@@ -44,7 +44,7 @@ public class EmployeeWageBuild {
 	    	   
 					    totalEmpWage= totalEmpHours * salaryPerHour;
 					  
-					    System.out.println("Total wage is: " + totalEmpWage);
+					    System.out.println("Total wage for company " + company + " is" + totalEmpWage);
 					    return totalEmpWage;
 					 	  
 				
@@ -55,7 +55,8 @@ public class EmployeeWageBuild {
 		        public static void main(String[] args) {
 			       System.out.println("Welcome to Salary Calculator on Master branch"); 
 			   
-			      computeEmployeeWage();
+			      computeEmployeeWage("TCS",5,2,10);
+			      computeEmployeeWage("Accenture",3,4,20);
 			
 		
 		  }
