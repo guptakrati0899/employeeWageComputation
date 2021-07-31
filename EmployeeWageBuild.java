@@ -1,13 +1,28 @@
 package employeeWageComputation;
-import java.lang.Math;
+
 
 public class EmployeeWageBuild {
 	
  public static final  int partTime=1,fullTime=2;
+ private final String company;
+ private final int salaryPerHour;
+ private final int workingDays;
+ private final int maxWorkingHours;
+ private int totalEmpWage;
+ 
+ 
+ public EmployeeWageBuild (String company ,int salaryPerHour, int workingDays, int maxWorkingHours) {
+	 
+	 this.company = company;
+	 this.salaryPerHour = salaryPerHour;
+	 this.workingDays = workingDays;
+	 this.maxWorkingHours = maxWorkingHours;
+	 
+ }
 	
-public static int computeEmployeeWage(String company ,int salaryPerHour, int workingDays, int maxWorkingHours) {
+public void computeEmployeeWage() {
 	    	   
-	    	   int empHours=0,totalEmpHours=0,totalWorkingDays=0,totalEmpWage=0;
+	    	   int empHours=0,totalEmpHours=0,totalWorkingDays=0;
 	    	   
 	    	   while(totalWorkingDays < workingDays && totalEmpHours < maxWorkingHours) {
 	    		   
@@ -43,21 +58,33 @@ public static int computeEmployeeWage(String company ,int salaryPerHour, int wor
 	    	   
 	    	   
 					    totalEmpWage= totalEmpHours * salaryPerHour;
-					  
-					    System.out.println("Total wage for company " + company + " is" + totalEmpWage);
-					    return totalEmpWage;
-					 	  
+					     System.out.println("The wage for "+ company + " is "+ totalEmpWage); 
+					     
+					     int totalWageTCS=5*2*10;
+					     int totalWageAccenture=3*4*20;
+					     
+					     int wageSaveTCS=totalWageTCS-totalEmpWage;
+					 
 				
 	       }
+                    
+                      
+             
+              
+              
 					  	
 	    
 	
 		        public static void main(String[] args) {
 			       System.out.println("Welcome to Salary Calculator on Master branch"); 
-			   
-			      computeEmployeeWage("TCS",5,2,10);
-			      computeEmployeeWage("Accenture",3,4,20);
-			
+			       
+			      EmployeeWageBuild TCS =new EmployeeWageBuild("TCS",5,2,10);
+			      EmployeeWageBuild Accenture =new EmployeeWageBuild("Accenture",3,4,20);
+			      
+			      TCS.computeEmployeeWage();
+			      System.out.println(TCS);
+			      Accenture.computeEmployeeWage();
+			      System.out.println(Accenture);
 		
 		  }
 				           			    
