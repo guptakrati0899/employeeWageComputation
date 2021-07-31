@@ -28,7 +28,7 @@ public class CompanyEmpWage {
 		 }
 		 
 		 public String toString() {
-			 return "Total Emp Wage for" + company + "is" + totalEmpWage ;
+			 return " Total Emp Wage for " + company + " is " + totalEmpWage ;
 		 }
 	}
 
