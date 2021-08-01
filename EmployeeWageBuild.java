@@ -6,50 +6,54 @@ public class EmployeeWageBuild {
 	
 
 
-	    public static final int PARTTIME = 1;
-	    public static final int FULLTIME = 2;
+	    public static final int partTime = 1;
+	    public static final int fullTime = 2;
 
 	    private final String company;
-	    private final int empRatePerHour;
-	    private final int numberOfWorkingDays;
-	    private final int hrsPerMonth;
+	    private final int salaryPerHour;
+	    private final int workingDays;
+	    private final int maxWorkingHours;
 	    private int totalEmpWage;    
 	    
-	    public EmployeeWageBuild(String company, int empRatePerHour, int numberOfWorkingDays, 
-	                                            int hrsPerMonth) {
+	    public EmployeeWageBuild(String company, int salaryPerHour, int workingDays, 
+	                                            int maxWorkingHours) {
 	        
 	        this.company = company;
-	        this.empRatePerHour = empRatePerHour;
-	        this.numberOfWorkingDays = numberOfWorkingDays;
-	        this.hrsPerMonth = hrsPerMonth;
+	        this.salaryPerHour = salaryPerHour;
+	        this.workingDays = workingDays;
+	        this.maxWorkingHours = maxWorkingHours;
 
 	    }
 
 	    public void empWageComputation() {
 	        
-	        //Variables
+	     
 	        int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 
-	        //Computation
-	        while (totalEmpHrs <= hrsPerMonth &&
-	               totalWorkingDays < numberOfWorkingDays) {
+	        while (totalEmpHrs <= maxWorkingHours &&
+	               totalWorkingDays < workingDays) {
 	            totalWorkingDays++;
 	            int checkEmp = (int) Math.floor(Math.random() * 10) % 3;
 	            switch (checkEmp) {
-	                case FULLTIME :
+	                case fullTime :
+	                	System.out.println("Employee is full time present"); 
 	                    empHrs = 8;
 	                    break;
-	                case PARTTIME :
+	                case partTime :
 	                    empHrs = 4;
+	                    System.out.println("Employee is part time present"); 
 	                    break;
 	                default :
+	                	System.out.println("Employee is absent"); 
 	                    empHrs = 0;
 	            }
 	            totalEmpHrs += empHrs;
+	           
 	            System.out.println("Employee Working Days : " +totalWorkingDays + 
 	                                "     Employee Working Hours : " +totalEmpHrs);
 	        }
-	        totalEmpWage = totalEmpHrs + empRatePerHour;
+	        totalEmpWage = totalEmpHrs * salaryPerHour;
+	        
 
 	    }
 
