@@ -2,7 +2,7 @@ package employeeWageComputation;
 
 public class EmpWage {
 
-    // Constants
+    
     public static final int partTime = 1;
     public static final int fullTime = 2;
     public final String company;

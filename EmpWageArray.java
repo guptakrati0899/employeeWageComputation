@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class EmpWageArray {
 
     public static final  int partTime = 1;
@@ -70,10 +71,13 @@ public class EmpWageArray {
 
         EmpWageArray empWageBuilder = new EmpWageArray();
         empWageBuilder.addEmpWage("TCS", 20, 2, 10);
-        empWageBuilder.addEmpWage("Infosys", 10, 3, 20);
-        empWageBuilder.addEmpWage("Wipro", 15, 2, 20);
+        empWageBuilder.addEmpWage("HCL", 10, 3, 20);
+        empWageBuilder.addEmpWage("CTS", 15, 2, 20);
         empWageBuilder.addEmpWage("Magic edTech", 20, 2, 10);
         empWageBuilder.empWageComputation();
-
+        System.out.println("Total Wage for TCS : " +empWageBuilder.getTotalWage("TCS"));
+        System.out.println("Total Wage for HCL : " +empWageBuilder.getTotalWage("HCL"));
+        System.out.println("Total Wage for CTS : " +empWageBuilder.getTotalWage("CTS"));
+        System.out.println("Total Wage for Magic edTech : " +empWageBuilder.getTotalWage("Magic edTech"));
     }
 }
